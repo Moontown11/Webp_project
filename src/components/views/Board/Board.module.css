@@ -1,0 +1,17 @@
+.container {
+  width: 1200px;
+  padding-bottom: 2%;
+  min-height: calc(83vh);
+  word-break: break-all;
+  margin: 0 auto;
+}
+
+.datagrid {
+  height: 480px;
+  width: 100%;
+  background-color: white;
+}
+
+.datagrid_item {
+  cursor: pointer;
+}

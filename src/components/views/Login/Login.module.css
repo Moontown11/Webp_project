@@ -1,0 +1,12 @@
+.container {
+  width: 1200px;
+  padding-bottom: 2%;
+  min-height: calc(83vh);
+  word-break: break-all;
+  margin: 0 auto;
+}
+
+.loginForm {
+  text-align: center;
+  margin-top: 10%;
+}
