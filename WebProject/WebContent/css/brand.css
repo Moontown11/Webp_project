@@ -1,0 +1,32 @@
+.brand-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 3% 0px;
+  padding-bottom: 4%;
+}
+.brand-title {
+  display: flex;
+  align-items: center;
+  margin-left: 7%;
+}
+.brand-title p {
+  font-weight: bold;
+  font-size: 150%;
+  padding: 1%;
+}
+
+.brand-imgtxt {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.brand-imgtxt img {
+  width: 40%;
+}
+.brand-imgtxt div {
+  width: 30%;
+}
+.brand-imgtxt p {
+  font-size: 110%;
+}

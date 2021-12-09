@@ -1,0 +1,137 @@
+/* common part */
+body {
+  font-family: "Malgun Gothic";
+  background-color: white;
+  margin: 0;
+}
+
+.navColor {
+  background-color: #f08080;
+  color: #f08080;
+}
+.customPink {
+  background-color: rgb(252, 192, 192);
+}
+
+/* Nav-bar part */
+.box {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.maintext {
+  color: white;
+  position: relative;
+  font-weight: bold;
+  font-size: 200%;
+  margin: 0 5%;
+}
+
+#main_menu {
+  height: 100px;
+  border-top: solid 1px #f07a7a;
+  border-bottom: solid 1px #f07a7a;
+  padding: 5px 2px;
+  background-color: #f07a7a;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-list {
+  display: block;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-list li {
+  display: inline;
+  /*font size : 12px;*/
+  padding-right: 20px;
+}
+
+.menu-list ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 125%;
+  font-weight: bold;
+}
+
+/* mainpage part */
+
+#login {
+  float: right;
+}
+
+#mypage {
+  float: right;
+}
+
+#logout {
+  float: right;
+}
+
+#btn_group {
+  display: flow-root;
+  height: auto;
+}
+
+#btn_group button {
+  border: 1.5px solid #c36a2d;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 5px;
+}
+
+#btn_group button:hover {
+  color: white;
+  background-color: #c36a2d;
+}
+
+#searchbox {
+  display: inline-block;
+  margin: 1px;
+  padding: 8px;
+  height: 30px;
+  width: 430px;
+  background-color: #fff;
+  border: 2px solid #5f361b;
+  border-radius: 30px;
+}
+
+#search-txt {
+  padding: 0;
+  width: 240px;
+  border: none;
+  outline: none;
+  float: left;
+  font-size: 1rem;
+  line-height: 30px;
+}
+
+#search-btn {
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #c36a2d;
+  border: 0;
+  outline: 0;
+}
+.logo {
+  width: 400px;
+  height: auto;
+}
+.content {
+  text-align: center;
+}
+
+/* Brand.html part */
+
+.brand {
+  font-family: "Malgun Gothic";
+}
