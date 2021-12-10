@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,800);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+.main-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.figure-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  margin: 30px;
+  height: 100%;
+  max-width: 1000px;
+}
+
+figure.cardbody {
+  font-family: "Raleway", Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 380px;
+  max-width: 480px;
+  width: 100%;
+  background: #f8cccc;
+  color: #000000;
+}
+figure.cardbody * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+figure.cardbody > img {
+  height: 250px;
+  width: 100px;
+  object-fit: cover;
+  width: 50%;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  -webkit-transform: scale(1.6);
+  transform: scale(1.6);
+  position: relative;
+  left: -15%;
+  z-index: 1;
+}
+figure.cardbody figcaption {
+  padding: 20px 30px 20px 20px;
+  position: absolute;
+  right: 0;
+  width: 50%;
+}
+figure.cardbody figcaption h2,
+figure.cardbody figcaption p {
+  margin: 0;
+  text-align: right;
+  padding: 10px 0;
+  width: 100%;
+}
+figure.cardbody figcaption h2 {
+  font-size: 1.3em;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+figure.cardbody figcaption h2 span {
+  font-weight: 800;
+}
+figure.cardbody figcaption p {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+figure.cardbody figcaption .icons {
+  width: 100%;
+  text-align: right;
+}
+figure.cardbody figcaption .icons i {
+  font-size: 26px;
+  padding: 5px;
+  top: 50%;
+  color: #000000;
+}
+figure.cardbody figcaption a {
+  opacity: 0.3;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+figure.cardbody figcaption a:hover {
+  opacity: 0.8;
+}
+figure.cardbody .position {
+  width: 100%;
+  text-align: right;
+  padding: 15px 30px;
+  font-size: 0.9em;
+  opacity: 1;
+  font-style: italic;
+  color: #ffffff;
+  background: #000000;
+}
+figure.cardbody.red .position {
+  background: #fd9292;
+}
+figure.cardbody:hover > img,
+figure.cardbody.hover > img {
+  left: -12%;
+}
