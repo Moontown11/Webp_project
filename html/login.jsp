@@ -19,7 +19,9 @@
 
 	String id = request.getParameter("id");
 	String password = request.getParameter("pswd");
-       
+    
+	session.setAttribute("ID",id);
+
 	try{
 		//데이터베이스 접속
        	Class.forName("com.mysql.jdbc.Driver");
@@ -52,7 +54,7 @@
 		%>
 		<script type="text/javascript">
 			alert("로그인 성공!");
-			document.location.href = "mainpage.html";
+			document.location.href = "mainpage.jsp";
 		</script>
 		<%
 	}

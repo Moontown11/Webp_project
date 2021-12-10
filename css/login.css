@@ -1,4 +1,7 @@
 body{
+	background: linear-gradient(to bottom, #db8383, #dfa9a9, #dfc2c2);
+}
+.loginform{
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -6,8 +9,18 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #db8383, #dfa9a9, #dfc2c2);
+
 }
+
+.maintext{
+	justify-content: space-between;
+	color: white;
+	display: flex;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 250%;
+  }
+  
 .main{
 	width: 350px;
 	height: 500px;

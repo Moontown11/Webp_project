@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.sql.*" %>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,13 +15,26 @@
   </head>
 
   <body>
+
+    <%
+      String m_id = (String)session.getAttribute("ID");
+      String log;
+      
+        if(m_id == null){
+          log="<a href=Login.html>로그인</a>";
+      } else {
+        log="<a href=logout.jsp>로그아웃</a>";
+      }
+      
+      
+    %>
     <nav id="main_menu">
       <div class="box" style="text-align: center">
-        <a href="..\html\mainpage.html" class="maintext">FOOD COURT</a>
+        <a href="mainpage.jsp" class="maintext">FOOD COURT</a>
         <div class="menu-list">
           <ul>
             <li>
-              <a href="..\html\Brand.html">Our Brand</a>
+              <a href="Brand.html">Our Brand</a>
             </li>
             <li><a href="..\html\Menu.html">Menu</a></li>
             <li>
@@ -26,10 +43,7 @@
             <li><a href="..\html\Notice.html">Notice</a></li>
             <li><a href="..\html\Crew.html">Crew</a></li>
             <li>
-              <button id="loginbutton" onClick="location.href='Login.html'">
-                login
-              </button>
-              <!-- 위치 조정 필요! -->
+              <button id="loginbutton"><%=log%></button>
             </li>
           </ul>
         </div>
