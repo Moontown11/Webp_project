@@ -40,10 +40,10 @@ body {
   justify-content: space-between;
 }
 
-.menu-list {
-  display: block;
+.menu-list ul {
+  display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .menu-list li {
@@ -62,8 +62,8 @@ body {
 /* mainpage part */
 
 /*로그인 버튼*/
-#loginbutton{
-  border: 1.5px solid #C36A2D;
+#loginbutton {
+  border: 1.5px solid #c36a2d;
   background-color: rgba(0, 0, 0, 0);
   padding: 5px;
 }
