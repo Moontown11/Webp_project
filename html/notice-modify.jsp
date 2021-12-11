@@ -3,18 +3,26 @@
 <%@ page import="java.sql.*" %>
 <%request.setCharacterEncoding("EUC-KR"); %>
 <html>
+<head>
+<meta charset="utf-8" />
+<meta name="view" content="width=device-width" />
+<!--  <script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>-->
+<link rel="stylesheet" href="..\css\menu.css" />
+<link rel="stylesheet" href="..\css\unite.css" />
+<link rel="stylesheet" href="..\css\notice.css" />
+</head>
 <body>
 	<%
 	String m_id = (String)session.getAttribute("ID");
-	//¼¼¼ÇÀÌ ¾ø´Â °æ¿ì
+	//ì„¸ì…˜ì´ ì—†ëŠ” ê²½ìš°
 	if(m_id == null){
 	%>
 		<script>
-		alert("·Î±×ÀÎ ÈÄ ÀÛ¼ºÇÏ¼¼¿ä!");
+		alert("ë¡œê·¸ì¸ í›„ ìž‘ì„±í•˜ì„¸ìš”!");
 		document.location.href = "Notice.jsp";
 		</script>
 	<%
-	}else{ //¼¼¼Ç ÀÖÀ¸¸é
+	}else{ //ì„¸ì…˜ ìžˆìœ¼ë©´
 	%>
 
 	<%
@@ -42,43 +50,38 @@
 			rs2 = pstmt2.executeQuery();
 		}
 		catch(Exception e){
-			out.println("DB ¿¬µ¿ ¿À·ùÀÔ´Ï´Ù.:" + e.getMessage());
+			out.println("DB ì—°ë™ ì˜¤ë¥˜ìž…ë‹ˆë‹¤.:" + e.getMessage());
 		}
 			
 		if(rs2.next()){
-			name = rs2.getString("name"); //ÇöÀç ¼¼¼Ç ¸â¹ö ÀÌ¸§
+			name = rs2.getString("name"); //í˜„ìž¬ ì„¸ì…˜ ë©¤ë²„ ì´ë¦„
 		}	
 		while(rs.next()){
-			 String author = rs.getString("name"); //°Ô½Ã±Û¿¡ ÀúÀåµÈ ÀÛ¼ºÀÚ
+			 String author = rs.getString("name"); //ê²Œì‹œê¸€ì— ì €ìž¥ëœ ìž‘ì„±ìž
 			if(!author.equals(name))
 			{
 			%>
-		<center><h2>ÀÛ¼ºÀÚ°¡ ´Ù¸¨´Ï´Ù.</h2>
-		<a href="notice-read.jsp?id=<%=id %>">µÚ·Î</a>
+		<center><h2>ìž‘ì„±ìžê°€ ë‹¤ë¦…ë‹ˆë‹¤.</h2>
+		<a href="notice-read.jsp?id=<%=id %>">ë’¤ë¡œ</a>
 		</center>
 		<%
 			}
 			else {
 		%>
-		<center><h2>°Ô½Ã±Û ¼öÁ¤</h2><br><br>
-		<form action="notice-modify-db.jsp" method="post">
-		<table border = "0">
-			<tr>
-				<td>±Û Á¦ ¸ñ : </td>
-				<td><input type = "text" name = "title" size = "50"></td>
-			</tr>
-			<tr>
-				<td valign="top">±Û ³» ¿ë : </td>
-				<td><textarea name="content" cols="65" rows="4"></textarea></td>
-			</tr>
-		</table><br><br>
-		<input type="hidden" name="id" value="<%=request.getParameter("id")%>">
+		<center><h2>ê²Œì‹œê¸€ ìˆ˜ì •</h2><br><br>
+		<form action = "notice-insert-db.jsp" method="post">
+		<table class="insert_form">
+		ê¸€ ì œëª© : <input type="text" name="title" size="100" style="height:35px;" required><br><br>
+		</div><textarea name="content" cols="150" rows="35" required></textarea><br><br>
 		
-		<input type="submit" value="µî·ÏÇÏ±â">
-		<input type="reset" value="´Ù½Ã¾²±â">		
+		<div id="btn_group">
+			<button id="notice_btn1" type="submit"> ë“±ë¡í•˜ê¸° </button>&nbsp;&nbsp;&nbsp;
+			<button id="notice_btn2" type="reset"> ë‹¤ì‹œì“°ê¸° </button><br><br><br>
+		</div>
+		</table>
 		</form>
-
-		<a href="notice-read.jsp?id=<%=request.getParameter("id") %>">Ãë¼Ò</a>
+		
+		<button id="back_btn" onclick="location.href='Notice.jsp'">ê²Œì‹œê¸€ ëª©ë¡ ë³´ê¸°</button><br>
 		</center>
 		
 		<%
