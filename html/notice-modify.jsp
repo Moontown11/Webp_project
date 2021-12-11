@@ -69,13 +69,13 @@
 			else {
 		%>
 		<center><h2>게시글 수정</h2><br><br>
-		<form action = "notice-insert-db.jsp" method="post">
+		<form action = "notice-modify-db.jsp" method="post">
 		<table class="insert_form">
 		글 제목 : <input type="text" name="title" size="100" style="height:35px;" required><br><br>
 		</div><textarea name="content" cols="150" rows="35" required></textarea><br><br>
-		
+		<input type="hidden" name="id" value="<%=request.getParameter("id")%>">
 		<div id="btn_group">
-			<button id="notice_btn1" type="submit"> 등록하기 </button>&nbsp;&nbsp;&nbsp;
+			<button id="notice_btn1" type="submit"> 수정완료 </button>&nbsp;&nbsp;&nbsp;
 			<button id="notice_btn2" type="reset"> 다시쓰기 </button><br><br><br>
 		</div>
 		</table>
