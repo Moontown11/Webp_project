@@ -20,7 +20,8 @@
 	String id = request.getParameter("id");
 	String password = request.getParameter("pswd");
 	String name = request.getParameter("name");
-
+	String vercode = request.getParameter("vercode");
+	String code = new String("0808");
 
 	try{
 		//데이터베이스 접속
@@ -29,36 +30,48 @@
 		con = DriverManager.getConnection(url,"root","0000");
 
       	//DB에서 아이디 패스워드 검색
-        sql = "select * from member where id='"+id+"'";
-		pstmt = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE,
-                ResultSet.CONCUR_UPDATABLE);
-		stmt=con.createStatement();
-        rs = pstmt.executeQuery(sql);
-        rs.last();
-        int count = rs.getRow();
-		//회원이 아닐 경우
-        if(count <= 0){
-        	//회원가입 처리
-			sql = "insert into member values('"+ id +"','"+ name +"','"+ password +"')";
-			stmt.executeUpdate(sql);
-			%>
+      	
+      	if(!vercode.equals(code)){
+      		%>
 			<script>
-			location.href="Login.html"
+			alert("직원확인용 코드가 일치하지 않습니다!!!");
+			location.href="Login.html";
 			</script>
 			<%
-		}
-       	else{
-       		//이미 회원가입되어있음
-       		out.println("이미 회원입니다.<br>");
-       		%>
-			<script>
-			location.href="Login.html"
-			</script>
-			<%
-       	}
-		stmt.close();
-		pstmt.close();
-		con.close();
+      	}
+      	else{
+	        sql = "select * from member where id='"+id+"'";
+			pstmt = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE,
+	                ResultSet.CONCUR_UPDATABLE);
+			stmt=con.createStatement();
+	        rs = pstmt.executeQuery(sql);
+	        rs.last();
+	        int count = rs.getRow();
+			//회원이 아닐 경우
+	        if(count <= 0){
+	        	//회원가입 처리
+				sql = "insert into member values('"+ id +"','"+ name +"','"+ password +"')";
+				stmt.executeUpdate(sql);
+				%>
+				<script>
+				alert("회원가입을 환영합니다!");
+				location.href="Login.html"
+				</script>
+				<%
+			}
+	       	else{
+	       		//이미 회원가입되어있음
+	       		%>
+				<script>
+				alert("이미 회원입니다!");
+				location.href="Login.html"
+				</script>
+				<%
+	       	}
+			stmt.close();
+			pstmt.close();
+			con.close();
+      	}
 	} catch (ClassNotFoundException e) { 
 		System.out.println("드라이버 로드 실패");
 	} catch (SQLException e) {
