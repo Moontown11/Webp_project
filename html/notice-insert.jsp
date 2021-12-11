@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <title>°Ô½Ã±Û ¾²±â</title>
+    <title>ê²Œì‹œê¸€ ì“°ê¸°</title>
     <meta charset="utf-8" />
     <meta name="view" content="width=device-width" />
     <!--  <script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>-->
@@ -13,35 +13,65 @@
     <link rel="stylesheet" href="..\css\notice.css" />
   </head>
 <body>
+	
 	<%
-	String m_id = (String)session.getAttribute("ID");
-	//¼¼¼ÇÀÌ ¾ø´Â °æ¿ì
+      String m_id = (String)session.getAttribute("ID");
+      String log;
+      
+        if(m_id == null){
+          log="<a href=Login.html>ë¡œê·¸ì¸</a>";
+      } else {
+        log="<a href=logout.jsp>ë¡œê·¸ì•„ì›ƒ</a>";
+      }
+      
+
+	//ì„¸ì…˜ì´ ì—†ëŠ” ê²½ìš°
 	if(m_id == null){
 	%>
-	%>
 		<script>
-		alert("·Î±×ÀÎ ÈÄ ÀÛ¼ºÇÏ¼¼¿ä!");
+		alert("ë¡œê·¸ì¸ í›„ ìž‘ì„±í•˜ì„¸ìš”!");
 		document.location.href = "Notice.jsp";
 		</script>
 	<%
 	}else{
 	%>
-	
-	<center>
-	<h2> °Ô ½Ã ÆÇ </h2><br><br>
+
+     <nav id="main_menu">
+      <div class="box" style="text-align: center">
+        <a href="mainpage.jsp" class="maintext">FOOD COURT</a>
+        <div class="menu-list">
+          <ul>
+            <li>
+              <a href="..\html\Brand.jsp">Our Brand</a>
+            </li>
+            <li><a href="..\html\Menu.jsp">Menu</a></li>
+            <li>
+              <a href="..\html\Location.jsp">Location</a>
+            </li>
+            <li><a href="..\html\Notice.jsp">Notice</a></li>
+            <li><a href="..\html\Crew.jsp">Crew</a></li>
+            <li>
+              <button id="loginbutton"><%=log%></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	<center class="notice-insert-body">
+	<h1> ê²Œ ì‹œ íŒ </h1><br>
 	<form action = "notice-insert-db.jsp" method="post">
 	<table class="insert_form">
-	±Û Á¦¸ñ : <input type="text" name="title" size="100" style="height:35px;" required><br><br>
-	</div><textarea name="content" cols="150" rows="35" required></textarea><br><br>
+	ê¸€ ì œëª© : <input type="text" name="title" size="100" style="height:35px;" required><br><br>
+	</div><textarea name="content" cols="130" rows="15" required></textarea><br><br>
 	
 	<div id="btn_group">
-		<button id="notice_btn1" type="submit"> µî·ÏÇÏ±â </button>&nbsp;&nbsp;&nbsp;
-		<button id="notice_btn2" type="reset"> ´Ù½Ã¾²±â </button><br><br><br>
+		<button id="notice_btn1" type="submit"> ë“±ë¡í•˜ê¸° </button>&nbsp;&nbsp;&nbsp;
+		<button id="notice_btn2" type="reset"> ë‹¤ì‹œì“°ê¸° </button><br><br><br>
 	</div>
 	</table>
 	</form>
 	
-	<button id="back_btn" onclick="location.href='Notice.jsp'">°Ô½Ã±Û ¸ñ·Ï º¸±â</button><br>
+	<button id="back_btn" onclick="location.href='Notice.jsp'">ê²Œì‹œê¸€ ëª©ë¡ ë³´ê¸°</button><br>
 	</center>
 	<%
 	}

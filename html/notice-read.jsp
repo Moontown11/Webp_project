@@ -17,9 +17,9 @@
       String log;
       
         if(m_id == null){
-          log="<a href=Login.html>·Î±×ÀÎ</a>";
+          log="<a href=Login.html>ë¡œê·¸ì¸</a>";
       } else {
-        log="<a href=logout.jsp>·Î±×¾Æ¿ô</a>";
+        log="<a href=logout.jsp>ë¡œê·¸ì•„ì›ƒ</a>";
       }
       
       
@@ -48,7 +48,7 @@
   
      <center>
         <div class="read-body">
-            <center><h1>°øÁö»çÇ×</h1></center>
+            <center><h1>ê³µì§€ì‚¬í•­</h1></center>
            <%
              int id =0;
           String name = "", title = "", date = "", content = "";
@@ -67,7 +67,7 @@
                      rs = stmt.executeQuery(sql);
                }
                catch(Exception e) {
-                     out.println("DB ¿¬µ¿ ¿À·ùÀÔ´Ï´Ù. : " + e.getMessage());
+                     out.println("DB ì—°ë™ ì˜¤ë¥˜ìž…ë‹ˆë‹¤. : " + e.getMessage());
                } 
       
                while(rs.next())  {
@@ -81,28 +81,28 @@
           <div class="read-content">
              <table cellpadding="0" cellspacing="0" border="0">
                <tr>
-                   <td width="100"><b>±Û ¾´ ÀÌ : </b></td>
+                   <td width="100"><b>ê¸€ ì“´ ì´ : </b></td>
                   <td><%= name %></td>
                </tr>
                <tr>
-                  <td><b>ÀÛ¼ºÀÏ : </b></td>
+                  <td><b>ìž‘ì„±ì¼ : </b></td>
                   <td><%= date %></td>
                </tr>      
                <tr>
-                  <td><b>±Û Á¦ ¸ñ : </b></td>
+                  <td><b>ê¸€ ì œ ëª© : </b></td>
                   <td><%= title %></td>
                </tr>
                <tr>
-                 <td> <b>±Û ³» ¿ë : </b></td>
+                 <td> <b>ê¸€ ë‚´ ìš© : </b></td>
                   <td><%= content %></td>
                </tr>
              </table>
           </div>
           
           <div class="bot-buttons">
-             <button><a href="notice-modify.jsp?id=<%=id%>"> °Ô½Ã±Û ¼öÁ¤</a></button>
-             <button><a href="notice-delete.jsp?id=<%=id%>"> °Ô½Ã±Û »èÁ¦ </a></button>
-             <button><a href="Notice.jsp"> °Ô½Ã±Û ¸ñ·Ï º¸±â </a></button>
+             <button><a href="notice-modify.jsp?id=<%=id%>"> ê²Œì‹œê¸€ ìˆ˜ì •</a></button>
+             <button><a href="notice-delete.jsp?id=<%=id%>"> ê²Œì‹œê¸€ ì‚­ì œ </a></button>
+             <button><a href="Notice.jsp"> ê²Œì‹œê¸€ ëª©ë¡ ë³´ê¸° </a></button>
           </div>
         </div>
    </center>    
