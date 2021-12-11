@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
   <head>
     <title>Our Brand</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="view" content="width=device-width" />
     <!--  <script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>-->
     <link rel="stylesheet" href="..\css\menu.css" />
@@ -11,20 +13,33 @@
   </head>
 
   <body>
-    <nav id="main_menu">
+      <%
+      String m_id = (String)session.getAttribute("ID");
+      String log;
+      
+        if(m_id == null){
+          log="<a href=Login.html>로그인</a>";
+      } else {
+        log="<a href=logout.jsp>로그아웃</a>";
+      }
+      
+      
+    %>
+    
+	<nav id="main_menu">
       <div class="box" style="text-align: center">
         <a href="mainpage.jsp" class="maintext">FOOD COURT</a>
         <div class="menu-list">
           <ul>
             <li>
-              <a href="Brand.html">Our Brand</a>
+              <a href="..\html\Brand.jsp">Our Brand</a>
             </li>
-            <li><a href="Menu.html">Menu</a></li>
+            <li><a href="..\html\Menu.jsp">Menu</a></li>
             <li>
-              <a href="Location.html">Location</a>
+              <a href="..\html\Location.jsp">Location</a>
             </li>
-            <li><a href="Notice.html">Notice</a></li>
-            <li><a href="Crew.html">Crew</a></li>
+            <li><a href="..\html\Notice.jsp">Notice</a></li>
+            <li><a href="..\html\Crew.jsp">Crew</a></li>
             <li>
               <button id="loginbutton"><%=log%></button>
             </li>

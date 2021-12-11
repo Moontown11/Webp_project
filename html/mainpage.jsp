@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.sql.*" %>
 
 <!DOCTYPE html>
 <html>
   <head>
     <title>Restaurant</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="view" content="width=device-width" />
     <!--  <script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>-->
     <link rel="stylesheet" href="..\css\menu.css" />
@@ -34,14 +33,14 @@
         <div class="menu-list">
           <ul>
             <li>
-              <a href="Brand.html">Our Brand</a>
+              <a href="..\html\Brand.jsp">Our Brand</a>
             </li>
-            <li><a href="..\html\Menu.html">Menu</a></li>
+            <li><a href="..\html\Menu.jsp">Menu</a></li>
             <li>
-              <a href="..\html\Location.html">Location</a>
+              <a href="..\html\Location.jsp">Location</a>
             </li>
-            <li><a href="..\html\Notice.html">Notice</a></li>
-            <li><a href="..\html\Crew.html">Crew</a></li>
+            <li><a href="..\html\Notice.jsp">Notice</a></li>
+            <li><a href="..\html\Crew.jsp">Crew</a></li>
             <li>
               <button id="loginbutton"><%=log%></button>
             </li>
