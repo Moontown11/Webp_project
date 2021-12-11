@@ -1,8 +1,8 @@
 /* common part */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 body {
-  font-family: "Malgun Gothic";
-  background-color: white;
-  margin: 0;
+  background: linear-gradient(to left, #ffc4c4, #fffeb3);
+  font-family: "Roboto", sans-serif;
 }
 
 .navolor {
@@ -59,9 +59,6 @@ body {
   font-weight: bold;
 }
 
-/* mainpage part */
-
-/*로그인 버튼*/
 #loginbutton {
   border: 1.5px solid #c36a2d;
   background-color: rgba(0, 0, 0, 0);

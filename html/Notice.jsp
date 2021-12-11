@@ -49,8 +49,10 @@
     </nav>
 
     <section>
-      <!--for demo wrap-->
-      <h1>공지사항</h1>
+      <div class="notice-head">
+        <h1><b>공지사항</b></h1>
+        <button class="insert_btn" onclick="location.href='notice-insert.jsp'">게시글 쓰기</button>
+      </div>
       <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
           <thead>
@@ -86,7 +88,7 @@
                 rs = stmt.executeQuery(sql);
               }
               catch(Exception e){
-            	  
+                 
                 out.println("DB 연동 오류입니다.:" + e.getMessage());
               }
                 rs.last();
@@ -96,7 +98,7 @@
                 while(rs.next())
                 {
                   id = Integer.parseInt(rs.getString("id"));
-            %>	
+            %>   
             <tr>
               <td><%= rownum %></td>
               <td>
@@ -109,13 +111,12 @@
           </tbody>
         </table>
         
-		<%
-			stmt.close();
-			conn.close();
-		%>
+      <%
+         stmt.close();
+         conn.close();
+      %>
       </div>
     </section>
-    <a href="notice-insert.jsp">게시글 쓰기</a>
 
     <script>
       $(window)

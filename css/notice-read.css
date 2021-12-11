@@ -1,0 +1,31 @@
+body{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+
+.read-content{
+margin-bottom: 30px;
+      display:flex;
+     align-items: center;
+  background-color: rgb(255,255,255);
+}
+
+.bot-buttons{
+   display:flex;
+     align-items: center;
+  justify-content: space-evenly;
+}
+
+.bot-buttons button{
+   background-color: rgb(255,255,255);
+   border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.read-body h1{
+   margin: 30px
+}
+
+.read-body{
+   width:50%
+}

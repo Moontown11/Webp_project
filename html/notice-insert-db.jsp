@@ -19,8 +19,10 @@
 	//세션이 없는 경우
 	if(m_id == null){
 	%>
-		로그인 후 대출하세요.<br>
-		<a href="login.html">로그인</a>
+		<script>
+		alert("로그인 후 작성하세요!");
+		document.location.href = "Notice.jsp";
+		</script>
 	<%
 	}else{
 	%>
@@ -85,10 +87,10 @@
 	     }
     %>
     
-    <center>
-    <h2> 작성한 글이 등록되었습니다. </h2>
-    <a href="Notice.jsp"> 게시글 목록 보기</a> 
-    </center>
+		<script>
+		alert("게시글 작성 완료!");
+		document.location.href = "Notice.jsp";
+		</script>
 
 	<%
 	}

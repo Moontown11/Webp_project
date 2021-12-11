@@ -18,33 +18,30 @@
 	//세션이 없는 경우
 	if(m_id == null){
 	%>
-		로그인 후 작성하세요.<br>
-		<a href="Login.html">로그인</a>
+	%>
+		<script>
+		alert("로그인 후 작성하세요!");
+		document.location.href = "Notice.jsp";
+		</script>
 	<%
 	}else{
 	%>
 	
 	<center>
-	<h2> 게 시 판</h2>
+	<h2> 게 시 판 </h2><br><br>
 	<form action = "notice-insert-db.jsp" method="post">
-	<table border = "0">
-		<tr>
-			<td>글 제 목 : </td>
-			<td><input type = "text" name = "title" size = "50"></td>
-		</tr>
-		<tr>
-			<td valign="top">글 내 용 : </td>
-			<td><textarea name="content" cols="65" rows="4"></textarea></td>
-		</tr>
-		
-	</table><br><br>
+	<table class="insert_form">
+	글 제목 : <input type="text" name="title" size="100" style="height:35px;" required><br><br>
+	</div><textarea name="content" cols="150" rows="35" required></textarea><br><br>
 	
-	<input type="submit" value="등록하기">
-	<input type="reset" value="다시쓰기">
-	
+	<div id="btn_group">
+		<button id="notice_btn1" type="submit"> 등록하기 </button>&nbsp;&nbsp;&nbsp;
+		<button id="notice_btn2" type="reset"> 다시쓰기 </button><br><br><br>
+	</div>
+	</table>
 	</form>
 	
-	<a href="Notice.jsp">게시글 목록 보기</a><br>
+	<button id="back_btn" onclick="location.href='Notice.jsp'">게시글 목록 보기</button><br>
 	</center>
 	<%
 	}

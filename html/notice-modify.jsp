@@ -9,8 +9,10 @@
 	//세션이 없는 경우
 	if(m_id == null){
 	%>
-		로그인 후 작성하세요.<br>
-		<a href="Login.html">로그인</a>
+		<script>
+		alert("로그인 후 작성하세요!");
+		document.location.href = "Notice.jsp";
+		</script>
 	<%
 	}else{ //세션 있으면
 	%>
